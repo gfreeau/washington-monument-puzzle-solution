@@ -117,7 +117,7 @@ function getPossibleSolutions(array $permutation, array $cubes) {
 
         while ($turns < $numFaces) {
             if ($cubes[$i][0] == $value) {
-                $solutions = appendToSolution($solutions, $i, $cubes[$i]);
+                $solutions = appendToPossibleSolutions($solutions, $i, $cubes[$i]);
             }
 
             $cubes[$i] = turnCubeClockwise($cubes[$i]);
@@ -129,7 +129,7 @@ function getPossibleSolutions(array $permutation, array $cubes) {
     return $solutions;
 }
 
-function appendToSolution(array $solutions, $column, array $cube) {
+function appendToPossibleSolutions(array $solutions, $column, array $cube) {
     if (!is_numeric($column) || empty($cube)) {
         return $solutions;
     }
