@@ -1,4 +1,5 @@
 *.class
 java/out
+kotlin/out
 *.iml
 *.idea
