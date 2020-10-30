@@ -3,7 +3,7 @@ Washington monument puzzle solution
 
 All cube faces must add up to 555. There is over 262000+ possible permutations for each cube face.
 
-http://www.creativecrafthouse.com/index.php?main_page=product_info&products_id=502
+![Washington Monument puzzle](puzzle.jpg)
 
 The approach is to find all possible permutations for only a single cube face and then eliminate permutations that do not add up to 555. 
 This brings the possible permutations to less than 10000.
