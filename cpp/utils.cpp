@@ -6,7 +6,7 @@ unsigned int get_digit_base(unsigned int n, unsigned int b, unsigned int digit)
 	{
 		return 0;
 	}
-	for (int i = 0; i < digit; i++)
+	for (unsigned int i = 0; i < digit; i++)
 		n /= b;
 	if (n == 0)
 	{
@@ -30,7 +30,7 @@ unsigned int powi(unsigned int base, unsigned int exp)
 
 bool all_even(unsigned int in_array [], unsigned int size_array ) {
     bool flag = true;
-    for (int k = 1; k < size_array; k++)
+    for (unsigned int k = 1; k < size_array; k++)
 	{
 	    flag = (flag && (in_array[0] == in_array[k]));
     }
