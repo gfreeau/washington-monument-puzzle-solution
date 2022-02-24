@@ -11,7 +11,7 @@ Cube::Cube(unsigned int permute_id,const  unsigned int faces[NUM_FACES]) : _perm
 
 void Cube::print_faces()
 {
-    std::cout << "(";
+    std::cout << "[";
     for (unsigned int i = 0; i < NUM_FACES; i++)
     {
         if (i == NUM_FACES - 1)
@@ -20,24 +20,21 @@ void Cube::print_faces()
         }
         else
         {
-            std::cout << _faces[i] << ",";
+            std::cout << _faces[i] << ", ";
         }
     }
-    std::cout << ")";
+    std::cout << "]";
 }
 
 void Cube::permute()
 {
-    unsigned int temp[NUM_FACES];
-    for (unsigned int i = 0; i < NUM_FACES; i++)
+    unsigned int last = _faces[NUM_FACES - 1];
+    
+    for (unsigned int i = 0; i < NUM_FACES - 1 ; i++)
     {
-        temp[i] = _faces[i];
+        _faces[NUM_FACES - 1 - i] = _faces[NUM_FACES - 2 - i];
     }
-    for (unsigned int i = 1; i < NUM_FACES; i++)
-    {
-        _faces[i] = temp[i - 1];
-    }
-    _faces[0] = temp[NUM_FACES - 1];
+    _faces[0] = last;
     _permute_id = (_permute_id + 1) % NUM_FACES;
 }
 
